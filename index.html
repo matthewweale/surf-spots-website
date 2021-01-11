@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Surf Spots Blog</title>
+
+    <script src="keys.js" type="text/javascript" defer></script>
+    <script src="main.js" type="text/javascript" defer></script>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div id='body'>
+
+        <div id='sign-in-form'>
+          <div>
+            <input id="email" type="text" placeholder="Email...">
+          </div>
+          <div>
+            <input id="password" type="password" placeholder="Password...">
+          </div>
+          <div>
+            <a href="#"><button id="sign-in" disabled=true>Sign In</button></a>
+            <a href="#"><button id="register" disabled=true>Register</button></a>
+          </div>
+        </div>
+
+        <div id='blog-content'>     
+            <nav id='nav-bar'>
+                <button id="logout">Logout</button>
+            </nav>
+            <div>
+                <header id='header'>
+                    <strong>Surf's Up!</strong> <br> Share your favorite surfing memory from your local spot!
+                </header>
+            </div>
+
+            <div id="surf-spot-dropdown" class="dropdown">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select a surf break...
+                </button>
+                <div id="main-dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a id="pacific-beach" class="dropdown-item">Pacific Beach, CA</a>
+                    <a id="matunuck" class="dropdown-item">Matunuck, RI</a>
+                    <a id="pipeline" class="dropdown-item">Pipeline & Backdoor, HI</a>
+                </div>
+                </div>
+
+            <div id="image-comment-section">  
+            </div>
+
+            <form action="" id="message-form">
+                <div class="form-group">
+                    <label>Post a comment about your favorite memory here:</label>
+                    <textarea id="message" type="text" class="form-control"></textarea>
+                </div>
+                <button id='submit-button'disabled=true>Post to board</button>
+            </form>
+
+            <div id="comments"> Comments:
+                <ul class="comment-board">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

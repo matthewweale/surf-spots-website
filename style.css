@@ -1,0 +1,64 @@
+h1 {
+    background-color: salmon;
+}
+
+img {
+    width: 200px;
+    height : auto;
+}
+    
+img {
+width: auto;
+height : 300px;
+}
+    
+button {
+     background-color: seagreen;
+ }
+
+#comments {
+    display: none;
+}
+
+.author {
+    padding-left: 10px;
+  }
+
+#body {
+    max-width: 500px;
+    margin: auto;
+    background-color:seashell;
+}
+
+#header {
+    text-align: center;
+}
+
+#surf-spot-dropdown {
+    text-align: center;
+    padding: 5px 0 5px 0;
+}
+
+#image-comment-section {
+    text-align: center;
+}
+
+#message-form {
+    text-align: center;
+}
+
+#comments {
+    text-align: center;
+}
+
+li {
+    text-align: left;
+}
+
+#nav-bar {
+    text-align: right;
+}
+
+#sign-in-form {
+    text-align: center;
+}
