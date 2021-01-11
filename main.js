@@ -15,6 +15,8 @@ const surfAppReference = firebase.database()
 
 $(document).ready(function(){
 
+    $('#dropdownMenuButton').text('Select a surf break...')
+
     const email = document.getElementById('email')
     const password = document.getElementById('password')
     const btnSignIn = document.getElementById('sign-in')
@@ -41,21 +43,15 @@ $(document).ready(function(){
         const emailVal = email.value
         const passVal = password.value
         
-        if (emailVal.length === 0 || passVal.length === 0) {
-            // alert('You must input something')
-        }
-        else{
-            const auth = firebase.auth()
+        const auth = firebase.auth()
 
-            // sign in
-            const promise = auth.createUserWithEmailAndPassword(emailVal, passVal)
-            promise.catch(e => alert(e.message))
-        }
+        // Register
+        const promise = auth.createUserWithEmailAndPassword(emailVal, passVal)
+        promise.catch(e => alert(e.message))
     })
 
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if(firebaseUser) {
-            // window.open("index.html", "_self")
             document.getElementById('sign-in-form').style.display = "none"
             document.getElementById('blog-content').style.display = "block"
             
@@ -68,7 +64,6 @@ $(document).ready(function(){
 
     // Hide comment box until user selects a surf break
     document.getElementById("message-form").style.display="none";
-    // document.getElementById("image-comment-section").style.display="none";
 
     // Show & hide drop down
     $('#dropdownMenuButton').click(function(){
@@ -90,13 +85,14 @@ $(document).ready(function(){
 
     $("#logout").click(function(){
         firebase.auth().signOut()
-        // window.open("signIn.html", "_self")
         document.getElementById('sign-in-form').style.display = "block"
         document.getElementById('blog-content').style.display = "none"
 
         document.getElementById("image-comment-section").style.display="none";
         document.getElementById("message-form").style.display="none";
         document.getElementById("comments").style.display="none";
+
+        $('#dropdownMenuButton').text('Select a surf break...')
     })
 
     // Add event listener to each drop down
@@ -109,6 +105,9 @@ $(document).ready(function(){
 
                  // Clear comment box
                  $('#message').val('')
+
+                //  Show surfspot name
+                $('#dropdownMenuButton').text('Pipeline & Backdoor, HI')
 
                 // Show comment box
                 document.getElementById("message-form").style.display="block";
@@ -124,6 +123,9 @@ $(document).ready(function(){
                 // Clear comment box
                 $('#message').val('')
 
+                //  Show surfspot name
+                $('#dropdownMenuButton').text('Pacific Beach, CA')
+
                 // Show comment box
                 document.getElementById("message-form").style.display="block";
 
@@ -137,6 +139,9 @@ $(document).ready(function(){
 
                 // Clear comment box
                 $('#message').val('')
+
+                //  Show surfspot name
+                $('#dropdownMenuButton').text('Matunuck, RI')
 
                 // Show comment box
                 document.getElementById("message-form").style.display="block";
